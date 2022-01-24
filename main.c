@@ -1,5 +1,13 @@
 #include "RFID_command.h"
-#include ".h"
+
+
+#include <stdio.h>
+#include <stdint.h>
+#include <unistd.h>
+#include <string.h>
+#include <getopt.h>
+#include <stdlib.h>
+
 UHF_RFID RFID;
 
 String comd = " ";
@@ -46,7 +54,7 @@ void loop() {
 
 
 	card = RFID.A_single_poll_of_instructions();
-	card2=RFID.Read_working_area();
+	/card2=RFID.Read_working_area();
 	Serial.println(card2.Region);
 	Serial.println(card2.Mixer_G);
 	Serial.println(card2.IF_G);
